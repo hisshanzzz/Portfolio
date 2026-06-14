@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Hisshan &mdash; AI &amp; Data Science Undergraduate &middot; Speaker &middot; Builder</title>
+  <meta name="description" content="Portfolio of Mohamed Jaufer Mohamed Hisshan: AI &amp; Data Science undergraduate at Robert Gordon University, Toastmaster of 4.5+ years, contest adjudicator, founder of English Pro Hub." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Spotlight that follows the mouse -->
+  <div id="spotlight" aria-hidden="true"></div>
+
+  <!-- Floating gold dust particles -->
+  <canvas id="dust" aria-hidden="true"></canvas>
+
+  <!-- BEAMER: the little stagehand robot. Eyes follow your cursor,
+       and he whispers tips. Click him for the next tip. -->
+  <div id="beamer" title="That's Beamer, my stagehand. Click him.">
+    <div class="beamer-bubble" id="beamer-bubble">Psst. I'm Beamer, the stagehand.</div>
+    <div class="beamer-antenna"><span class="beamer-tip"></span></div>
+    <div class="beamer-head">
+      <div class="beamer-eye" id="beamer-eye-l"><span class="beamer-pupil"></span></div>
+      <div class="beamer-eye" id="beamer-eye-r"><span class="beamer-pupil"></span></div>
+      <div class="beamer-mouth"></div>
+    </div>
+    <div class="beamer-body"></div>
+  </div>
+
+  <!-- Toastmasters timing lights (Easter egg) -->
+  <div id="timing-lights" title="Toastmasters timing lights: green, yellow, red as you scroll">
+    <span class="light green" id="light-green"></span>
+    <span class="light yellow" id="light-yellow"></span>
+    <span class="light red" id="light-red"></span>
+    <span id="timing-label">ON TIME</span>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <a href="#top" class="nav-logo">MH<span class="gold">.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#qa">Q&amp;A</a>
+      <a href="#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <!-- ========== CURTAIN RISE / HERO ========== -->
+  <header id="top" class="hero">
+    <p class="hero-kicker">NOW ON STAGE &middot; COLOMBO, SRI LANKA</p>
+    <h1 class="hero-name">
+      <span class="line">MOHAMED</span>
+      <span class="line gold">HISSHAN</span>
+    </h1>
+    <p class="hero-tagline">AI &amp; Data Science undergraduate who can <em>explain anything to anyone</em>.</p>
+    <p class="hero-sub">BSc (Hons) AI &amp; Data Science &middot; Robert Gordon University, UK (IIT Campus) &middot; Toastmaster &middot; Founder, English Pro Hub</p>
+
+    <!--
+      SPLINE 3D MICROPHONE GOES HERE.
+      1. Go to https://spline.design  ->  sign up free  ->  find/remix a microphone scene
+      2. Click Export -> Viewer -> copy the URL
+      3. Uncomment the two lines below, paste your URL, and delete the placeholder div
+    -->
+    <div class="hero-3d">
+      <div id="mic-placeholder" aria-hidden="true">
+        <div class="mic-head"></div>
+        <div class="mic-body"></div>
+        <div class="mic-base"></div>
+      </div>
+      <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+      <spline-viewer url="PASTE-YOUR-SPLINE-URL-HERE"></spline-viewer> -->
+    </div>
+
+    <a href="#about" class="hero-cta">THE SHOW BEGINS &darr;</a>
+  </header>
+
+  <!-- Ticker tape -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>TOASTMASTER 4.5+ YRS &#9679; 15+ CHIEF JUDGE &#9679; 20+ EVENTS HOSTED &#9679; ENGLISH PRO HUB &#9679; RECALL &middot; SPEECHLENS &#9679; HARVARD ASPIRE &middot; DISTINCTION &#9679; CANADA CUP GRAND FINALIST &#9679; BATCH REP &middot; AI &amp; DS &#9679; TRILINGUAL: EN &middot; TA &middot; SI &#9679;&nbsp;</span>
+      <span>TOASTMASTER 4.5+ YRS &#9679; 15+ CHIEF JUDGE &#9679; 20+ EVENTS HOSTED &#9679; ENGLISH PRO HUB &#9679; RECALL &middot; SPEECHLENS &#9679; HARVARD ASPIRE &middot; DISTINCTION &#9679; CANADA CUP GRAND FINALIST &#9679; BATCH REP &middot; AI &amp; DS &#9679; TRILINGUAL: EN &middot; TA &middot; SI &#9679;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ========== ACT I: THE OPENING ========== -->
+  <section id="about" class="act">
+    <p class="act-label">ACT I &middot; THE OPENING</p>
+    <h2>Most engineers learn to present.<br /><span class="gold">I'm a presenter learning to engineer.</span></h2>
+    <div class="about-grid">
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <img src="assets/hisshan-stagecraft.png" alt="Mohamed Hisshan hosting StageCraft 2026 at IIT" />
+        </div>
+        <figcaption>Hosting StageCraft '26 at IIT &mdash; 1,500+ in the crowd.</figcaption>
+      </figure>
+      <div class="about-text">
+        <p>I've spent <strong>4.5+ years on stage</strong> as a Toastmaster: speaking, judging contests, and hosting events with crowds of over a thousand. Then I asked a question most speakers never ask: <em>could I build the tools I wish existed?</em></p>
+        <p>So now I'm an <strong>AI &amp; Data Science undergraduate at Robert Gordon University (IIT, Colombo)</strong> and <strong>Batch Representative</strong> for my programme, turning years of communication into code. Projects like SpeechLens and ReCall (Cursor Buildathon) merge speaking, empathy, and engineering &mdash; and you can try SpeechLens live on this page.</p>
+        <p>I founded <strong>English Pro Hub</strong> (affordable or free English coaching), serve as a <strong>British Council examinations invigilator</strong>, and completed the <strong>Harvard Aspire Leaders Program (Distinction)</strong> and <strong>UPG Biashara (Distinction, Tribe Sherpa)</strong>. Trilingual: Tamil, English, Sinhala.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat"><span class="stat-num" data-count="4.5" data-decimals="1">0</span><span class="stat-suffix">+ yrs</span><p>ON STAGE AS A TOASTMASTER</p></div>
+        <div class="stat"><span class="stat-num" data-count="15">0</span><span class="stat-suffix">+</span><p>CONTESTS AS CHIEF JUDGE</p></div>
+        <div class="stat"><span class="stat-num" data-count="20">0</span><span class="stat-suffix">+</span><p>EVENTS EMCEED &amp; HOSTED</p></div>
+        <div class="stat"><span class="stat-num" data-count="1500">0</span><span class="stat-suffix">+</span><p>PARTICIPANTS AT STAGECRAFT, MY BIGGEST STAGE</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACT II: THE PERFORMANCES ========== -->
+  <section id="projects" class="act">
+    <p class="act-label">ACT II &middot; THE PERFORMANCES</p>
+    <h2>Projects you can <span class="gold">touch</span>, not just read about.</h2>
+
+    <!-- Headline act: SpeechLens with live demo -->
+    <article class="project featured">
+      <div class="project-info">
+        <p class="project-tag">HEADLINE ACT &middot; PYTHON &middot; ZERO DEPENDENCIES &middot; 24 UNIT TESTS</p>
+        <h3>SpeechLens</h3>
+        <p>I judge speech contests, and the #1 reason good speakers lose isn't content &mdash; it's timing and filler words. So I built SpeechLens: paste in a speech and it tells you if you'll finish inside the Toastmasters 5&ndash;7 minute window, which filler words you lean on, and how easy your sentences are to follow by ear. Pure Python, fully tested, built to coach my English Pro Hub students.</p>
+        <div class="chips"><span>Python</span><span>CLI</span><span>Flesch Readability</span><span>24 Tests</span><span>MIT License</span></div>
+        <a class="project-link" href="https://github.com/hisshanzzz/speechlens" target="_blank" rel="noopener">VIEW CODE ON GITHUB &rarr;</a>
+      </div>
+      <div class="demo-box">
+        <p class="demo-title">&#9654; TRY IT LIVE &mdash; paste any speech or paragraph:</p>
+        <textarea id="demo-input" rows="6" placeholder="Paste your speech here... or click 'Load a sample' below."></textarea>
+        <div class="demo-buttons">
+          <button id="demo-analyze">ANALYZE</button>
+          <button id="demo-sample" class="ghost">Load a sample</button>
+        </div>
+        <div id="demo-results" hidden>
+          <div class="demo-stat"><span id="r-time">&mdash;</span><label>EST. DELIVERY TIME</label></div>
+          <div class="demo-stat"><span id="r-window">&mdash;</span><label>5&ndash;7 MIN WINDOW</label></div>
+          <div class="demo-stat"><span id="r-fillers">&mdash;</span><label>FILLER WORDS</label></div>
+          <div class="demo-stat"><span id="r-read">&mdash;</span><label>READABILITY</label></div>
+          <p id="r-verdict"></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Supporting acts -->
+    <div class="project-row project-row-3">
+      <article class="project card">
+        <p class="project-tag">2026 &middot; CURSOR BUILDATHON &middot; TEAM SUSTAINX</p>
+        <h3>ReCall</h3>
+        <p>AI companion for Alzheimer's and dementia patients. Avatar agent &ldquo;Ama&rdquo; using Beyond Presence.ai, Google Gemini (Sinhala), Supabase, and WhatsApp caregiver summaries. Built at the Cursor Buildathon.</p>
+        <div class="chips"><span>AI</span><span>Gemini</span><span>Supabase</span><span>WhatsApp API</span></div>
+      </article>
+      <article class="project card">
+        <p class="project-tag">2D GAME &middot; PYGAME &middot; TEAM TYPHOONS</p>
+        <h3>The Tales of JV Pirates</h3>
+        <p>A 2D pirate adventure game built in Python with Pygame for CraftQuest at the American Center, Colombo (2024). Sprites, collisions, game loops &mdash; my first taste of shipping software with a team and a deadline.</p>
+        <div class="chips"><span>Python</span><span>Pygame</span><span>Game Dev</span></div>
+      </article>
+      <article class="project card">
+        <p class="project-tag">NASA &middot; IASC &middot; REAL ASTRONOMY DATA</p>
+        <h3>NASA Citizen Scientist</h3>
+        <p>Analyzed real telescope imagery hunting for asteroids in NASA's International Astronomical Search Collaboration (2021). My first time touching real scientific data &mdash; the spark behind choosing Data Science.</p>
+        <div class="chips"><span>Data Analysis</span><span>Astronomy</span><span>NASA IASC</span></div>
+      </article>
+    </div>
+
+    <!-- Coming to this stage -->
+    <h3 class="upcoming-title">COMING TO THIS STAGE</h3>
+    <div class="upcoming-row">
+      <div class="poster"><span>NEXT</span><h4>Sri Lanka Data Stories</h4><p>pandas + matplotlib analysis of real public Sri Lankan data, with charts and written conclusions.</p></div>
+      <div class="poster"><span>SOON</span><h4>Rupee Tracker</h4><p>CLI expense tracker in LKR &mdash; file I/O, dates, monthly reports.</p></div>
+      <div class="poster"><span>SOON</span><h4>Vocab Quiz Generator</h4><p>Auto-builds practice quizzes for my English Pro Hub students. First project with real users.</p></div>
+      <div class="poster"><span>FINALE</span><h4>English Pro Hub Manager</h4><p>Streamlit web app running my tutoring business: attendance, fees, progress.</p></div>
+    </div>
+  </section>
+
+  <!-- ========== ACT III: THE SPEAKER ========== -->
+  <section id="speaker" class="act">
+    <p class="act-label">ACT III &middot; THE SPEAKER</p>
+    <h2>The part of my CV <span class="gold">no other candidate has.</span></h2>
+    <div class="speaker-grid">
+      <div class="speaker-card"><h4>TOASTMASTERS &middot; 4.5+ YEARS</h4><p>VP Membership &amp; Treasurer, AATSL Emerging Toastmasters &middot; Division C Events Chair &middot; District 82 PR Team &middot; Triple Crown three consecutive years &middot; Pathways: Motivational Strategies &amp; Persuasive Influence &middot; YLP instructor with AAT Sri Lanka.</p></div>
+      <div class="speaker-card"><h4>CHIEF JUDGE &middot; 15+ CONTESTS</h4><p>HNB Best Speaker, club, area, division, and district semifinals. Certified debate adjudicator (Olcott Championship, SLIIT Inter-House 2024 &amp; 2025).</p></div>
+      <div class="speaker-card"><h4>EMCEE &middot; 20+ EVENTS</h4><p>Host of StageCraft at IIT (1,500+ participants) and Cutting Edge '26 &mdash; ITV segments, podcasts and dialogues. Trilingual on mic: English, Tamil, Sinhala.</p></div>
+      <div class="speaker-card"><h4>INTERNATIONAL DEBATER</h4><p>Grand Finalist, Canada Cup 2024 (SEEDS Debate Academy) &mdash; first team from my society to reach an international grand final. Best Speaker, Citizens International Youth Summit 2025.</p></div>
+      <div class="speaker-card"><h4>FOUNDER &middot; ENGLISH PRO HUB</h4><p>Built a tutoring initiative offering affordable and free English coaching &mdash; speech, oratory and dictation &mdash; for students who can't pay big-academy fees.</p></div>
+      <div class="speaker-card"><h4>PUBLISHED AUTHOR</h4><p>"Those Indelible Days": a 200+ page novel ranked in the top 500 of 41,000+ entries, Ratak Watina Pothak, Ministry of Education (2021).</p></div>
+    </div>
+    <div class="yt-embed">
+      <p class="demo-title">&#9654; DON'T TAKE MY WORD FOR IT &mdash; WATCH ME SPEAK:</p>
+      <a href="https://www.youtube.com/@hisshanspeaks6063" target="_blank" rel="noopener" class="yt-link">YouTube &middot; @hisshanspeaks6063 &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education" class="act">
+    <p class="act-label">EDUCATION</p>
+    <h2>Where I <span class="gold">learn and lead.</span></h2>
+    <div class="timeline">
+      <article class="timeline-item"><span class="timeline-date">2026 &ndash; Present</span><h4>BSc (Hons) Artificial Intelligence &amp; Data Science</h4><p>Robert Gordon University, UK (delivered via IIT, Colombo). Batch Representative for the AI &amp; Data Science programme.</p></article>
+      <article class="timeline-item"><span class="timeline-date">2026 &ndash; Present</span><h4>Diploma in English Language &amp; Literature</h4><p>Aquinas College of Higher Studies.</p></article>
+      <article class="timeline-item"><span class="timeline-date">2010 &ndash; 2023</span><h4>Royal College, Colombo 7</h4><p>GCE Advanced Level (2023). GCE Ordinary Level (2020): 8 As and 1 B. Primary Prefect, Grade Coordinator of eight clubs, Scout Troop Leader, Cadet Band leader.</p></article>
+    </div>
+    <p class="section-note">Also pursuing LLB (Hons) at The Open University of Sri Lanka &mdash; not my career focus, but it sharpens how I read rules and argue precisely.</p>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section id="experience" class="act">
+    <p class="act-label">EXPERIENCE</p>
+    <h2>Work that <span class="gold">pays the bills and builds people.</span></h2>
+    <div class="timeline">
+      <article class="timeline-item"><span class="timeline-date">Apr 2026 &ndash; Present</span><h4>Examinations Invigilator &mdash; British Council, Colombo</h4><p>Supervise international candidates, enforce regulations, handle administrative procedures.</p></article>
+      <article class="timeline-item"><span class="timeline-date">Nov 2025 &ndash; Present</span><h4>Founder &amp; English Tutor &mdash; English Pro Hub</h4><p>Online and in-person platform; affordable pricing, free for students who cannot pay; coaching for English Day competitions.</p></article>
+      <article class="timeline-item"><span class="timeline-date">2024 &ndash; Present</span><h4>Organising Committee &mdash; Royal College Hockey Club</h4><p>Secretarial work for Royal Hockey League; organising committee for Blue &amp; Gold Hockey Sevens (2 years).</p></article>
+      <article class="timeline-item"><span class="timeline-date">2024 &ndash; Present</span><h4>Freelance Content Creator</h4><p>Marketing and social media for small businesses; YouTube channel Hisshan Speaks.</p></article>
+      <article class="timeline-item"><span class="timeline-date">2024</span><h4>Editor &mdash; International Youth Alliance for Peace</h4><p>Publications and peace-focused editorial work.</p></article>
+    </div>
+  </section>
+
+  <!-- ========== LEADERSHIP ========== -->
+  <section id="leadership" class="act">
+    <p class="act-label">LEADERSHIP &amp; COMMUNITY</p>
+    <h2>Roles where I <span class="gold">show up for others.</span></h2>
+    <div class="lead-grid">
+      <div class="lead-card"><h4>ACADEMIC &amp; TECH</h4><ul><li>Batch Representative, AI &amp; DS, IIT</li><li>Standing Committee, IEEE Student Branch &amp; RAS</li><li>Member, Robotics &amp; Automation Society (Codesprint, MicroMaze)</li><li>Head of Partnerships &amp; Sponsorships, The AI Collective</li><li>AWS Builder community member</li></ul></div>
+      <div class="lead-card"><h4>SPEAKING &amp; DEBATE</h4><ul><li>Director of MUN, Rotaract &amp; Interact, CIDS</li><li>VP Membership &amp; Treasurer, AATSL Toastmasters</li><li>Division C Events Chair, Toastmasters District 82</li><li>YLP Instructor &amp; emcee with AAT Sri Lanka</li></ul></div>
+      <div class="lead-card"><h4>GLOBAL &amp; COMMUNITY</h4><ul><li>Harvard Aspire Leaders Program, Cohort 1 (Distinction)</li><li>UPG Biashara (Distinction) &middot; Tribe Sherpa, Tribe 45</li><li>UPG Sustainability Champion, Sri Lanka</li><li>Youth Forum Member, U.S. Embassy Colombo</li><li>ICC T20 World Cup 2026 volunteer (all matches)</li><li>Lanka Alzheimer's Foundation (50+ hours)</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ========== AWARDS ========== -->
+  <section id="awards" class="act">
+    <p class="act-label">HONOURS &amp; AWARDS</p>
+    <h2>Prizes that <span class="gold">started on a school stage.</span></h2>
+    <div class="awards-grid">
+      <div class="award-card"><span>2026</span><p>5 English prizes at Royal College 167th Prize Giving (Shakespeare, Literature, Essay, Creative Composition, Stewart Prize distinction)</p></div>
+      <div class="award-card"><span>2025</span><p>Best Speaker, Citizens International Youth Summit (representing Sri Lanka)</p></div>
+      <div class="award-card"><span>2024</span><p>Canada Cup Grand Finalist (SEEDS, Canada) &middot; 35th overall speaker</p></div>
+      <div class="award-card"><span>2023</span><p>All-Island English Day: Division 1st Prepared Speech &middot; Best Presenter, Eastern Province Muslim Schools Leadership Programme</p></div>
+      <div class="award-card"><span>2021</span><p>Published Author: &ldquo;Those Indelible Days&rdquo; &mdash; top 500 of 41,000+ (Ministry of Education) &middot; Sci-Genix winner &middot; NASA IASC Citizen Scientist</p></div>
+      <div class="award-card"><span>EARLIER</span><p>Top 5 Speaker Royal College &middot; Best Actor 2018 &middot; District Maths Olympiad 2016 &middot; World Record Water Rocket 2017</p></div>
+    </div>
+  </section>
+
+  <!-- ========== BACKSTAGE: SKILLS ========== -->
+  <section id="skills" class="act">
+    <p class="act-label">BACKSTAGE &middot; THE TOOLKIT</p>
+    <h2>What I work with.</h2>
+    <div class="skills-grid">
+      <div class="skill-col"><h4>LANGUAGES &amp; DATA</h4><div class="chips"><span>Python</span><span>R</span><span>SQL (basic)</span><span>pandas &middot; learning</span><span>matplotlib &middot; learning</span></div></div>
+      <div class="skill-col"><h4>BUILT WITH</h4><div class="chips"><span>Pygame</span><span>Git &amp; GitHub</span><span>Jupyter</span><span>HTML/CSS/JS &middot; this site</span></div></div>
+      <div class="skill-col"><h4>CERTIFIED</h4><div class="chips"><span>R for Data Science &mdash; LinkedIn Learning</span><span>2D Game Dev &mdash; American Center</span><span>NASA IASC Citizen Scientist</span><span>Maker Space &mdash; American Center</span><span>Harvard Aspire &mdash; Distinction</span></div></div>
+      <div class="skill-col"><h4>HUMAN SKILLS</h4><div class="chips"><span>Public Speaking</span><span>Adjudication</span><span>Teaching</span><span>Debating (BP)</span><span>Leadership</span><span>EN &middot; TA &middot; SI</span></div></div>
+    </div>
+  </section>
+
+  <!-- ========== Q&A SEGMENT ========== -->
+  <section id="qa" class="act">
+    <p class="act-label">THE Q&amp;A SEGMENT</p>
+    <h2>Every good speech ends with questions. <span class="gold">Ask yours.</span></h2>
+    <div class="qa-box">
+      <div class="qa-questions">
+        <button class="qa-q" data-a="Because data tells stories, and storytelling is what I've done my whole life. After analyzing asteroid data for NASA as a citizen scientist in 2021, I realized the people who change things aren't just the ones who find insights. They're the ones who can explain them. AI &amp; Data Science at RGU lets me do both.">Why AI &amp; Data Science?</button>
+        <button class="qa-q" data-a="It's a tutoring initiative I founded to make English coaching affordable, or completely free, for students who need it most. I coach speech, oratory and dictation for English Day competitions. It's also my testing ground: tools I build, like SpeechLens, get used by real students.">What is English Pro Hub?</button>
+        <button class="qa-q" data-a="SpeechLens was project one. Next up: a data analysis of real Sri Lankan public data with pandas, a rupee expense tracker, a vocab quiz generator for my students, and eventually a full Streamlit app to run English Pro Hub. Each project is roughly 20% above my current skill. That's the rule.">What are you building next?</button>
+        <button class="qa-q" data-a="Yes, an LLB at the Open University of Sri Lanka, alongside my AI &amp; Data Science degree. I'm not pursuing law as a career; it trains me to argue precisely, read carefully, and understand the rules systems run on. Useful traits in an engineer.">Wait, a law degree too?</button>
+        <button class="qa-q" data-a="Internships and entry opportunities in AI, data science, or software. Anywhere I can build real things with real data. I bring something most junior candidates can't: I can present the work to a boardroom the same day I finish it.">What are you looking for?</button>
+      </div>
+      <div class="qa-answer"><p id="qa-text">Click a question &mdash; I'll answer the way I would on stage.</p></div>
+    </div>
+  </section>
+
+  <!-- ========== STANDING OVATION: CONTACT ========== -->
+  <section id="contact" class="act finale">
+    <p class="act-label">THE CALL TO ACTION</p>
+    <h2 id="finale-line">Time's up &mdash; <span class="gold">but my story isn't.</span></h2>
+    <p class="finale-sub">If you're a recruiter, a fellow builder, or a Toastmaster who spotted the timing lights &mdash; let's talk.</p>
+    <a class="big-cta" href="mailto:hisshanm@yahoo.com">hisshanm@yahoo.com</a>
+    <div class="social-row">
+      <a href="https://github.com/hisshanzzz" target="_blank" rel="noopener">GITHUB</a>
+      <a href="https://linkedin.com/in/mohamed-jaufer-mohamed-hisshan-31399525b" target="_blank" rel="noopener">LINKEDIN</a>
+      <a href="https://www.youtube.com/@hisshanspeaks6063" target="_blank" rel="noopener">YOUTUBE</a>
+    </div>
+    <footer>
+      <p>MOHAMED JAUFER MOHAMED HISSHAN &middot; AI &amp; DATA SCIENCE &middot; RGU/IIT &middot; COLOMBO</p>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
