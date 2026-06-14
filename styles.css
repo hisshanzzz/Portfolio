@@ -1372,12 +1372,18 @@ button.ghost {
 .project.card:hover { transform: translateY(-5px); border-color: var(--gold); }
 .project.card h3 { font-size: 22px; }
 
+.subsection-title,
 .upcoming-title {
   font-family: "JetBrains Mono", monospace;
   font-size: 13px;
   letter-spacing: 0.25em;
   color: var(--cream-dim);
   margin: 56px 0 20px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
 }
 .upcoming-row {
   display: grid;
