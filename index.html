@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Hisshan &mdash; AI &amp; Data Science Undergraduate &middot; Speaker &middot; Builder</title>
-  <meta name="description" content="Portfolio of Mohamed Jaufer Mohamed Hisshan: AI &amp; Data Science undergraduate at Robert Gordon University, Toastmaster of 4.5+ years, contest adjudicator, founder of English Pro Hub." />
+  <title>Mohamed Hisshan &mdash; Speaker &middot; Leader &middot; Student &middot; Builder</title>
+  <meta name="description" content="Portfolio of Mohamed Jaufer Mohamed Hisshan: speaker, leader, volunteer, and content creator from Colombo. BSc (Hons) AI &amp; Data Science and LLB (Hons) at the Open University of Sri Lanka, Toastmaster, founder of English Pro Hub." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -17,19 +17,6 @@
 
   <!-- Floating gold dust particles -->
   <canvas id="dust" aria-hidden="true"></canvas>
-
-  <!-- BEAMER: the little stagehand robot. Eyes follow your cursor,
-       and he whispers tips. Click him for the next tip. -->
-  <div id="beamer" title="That's Beamer, my stagehand. Click him.">
-    <div class="beamer-bubble" id="beamer-bubble">Psst. I'm Beamer, the stagehand.</div>
-    <div class="beamer-antenna"><span class="beamer-tip"></span></div>
-    <div class="beamer-head">
-      <div class="beamer-eye" id="beamer-eye-l"><span class="beamer-pupil"></span></div>
-      <div class="beamer-eye" id="beamer-eye-r"><span class="beamer-pupil"></span></div>
-      <div class="beamer-mouth"></div>
-    </div>
-    <div class="beamer-body"></div>
-  </div>
 
   <!-- Toastmasters timing lights (Easter egg) -->
   <div id="timing-lights" title="Toastmasters timing lights: green, yellow, red as you scroll">
@@ -54,56 +41,142 @@
 
   <!-- ========== CURTAIN RISE / HERO ========== -->
   <header id="top" class="hero">
-    <p class="hero-kicker">NOW ON STAGE &middot; COLOMBO, SRI LANKA</p>
-    <h1 class="hero-name">
-      <span class="line">MOHAMED</span>
-      <span class="line gold">HISSHAN</span>
-    </h1>
-    <p class="hero-tagline">AI &amp; Data Science undergraduate who can <em>explain anything to anyone</em>.</p>
-    <p class="hero-sub">BSc (Hons) AI &amp; Data Science &middot; Robert Gordon University, UK (IIT Campus) &middot; Toastmaster &middot; Founder, English Pro Hub</p>
-
-    <!--
-      SPLINE 3D MICROPHONE GOES HERE.
-      1. Go to https://spline.design  ->  sign up free  ->  find/remix a microphone scene
-      2. Click Export -> Viewer -> copy the URL
-      3. Uncomment the two lines below, paste your URL, and delete the placeholder div
-    -->
-    <div class="hero-3d">
-      <div id="mic-placeholder" aria-hidden="true">
-        <div class="mic-head"></div>
-        <div class="mic-body"></div>
-        <div class="mic-base"></div>
+    <!-- Cinematic curtain + light beams -->
+    <div class="hero-cinema" aria-hidden="true">
+      <div class="hero-color-mesh"></div>
+      <div class="hero-orb hero-orb-gold"></div>
+      <div class="hero-orb hero-orb-warm"></div>
+      <div class="hero-orb hero-orb-amber"></div>
+      <div class="hero-rugby-ball" aria-hidden="true">
+        <span class="rugby-ball-body"></span>
       </div>
-      <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
-      <spline-viewer url="PASTE-YOUR-SPLINE-URL-HERE"></spline-viewer> -->
+      <div class="curtain curtain-l"></div>
+      <div class="curtain curtain-r"></div>
+      <div class="hero-vignette"></div>
+      <div class="hero-beam hero-beam-1"></div>
+      <div class="hero-beam hero-beam-2"></div>
+      <div class="hero-beam hero-beam-3"></div>
     </div>
 
-    <a href="#about" class="hero-cta">THE SHOW BEGINS &darr;</a>
+    <div class="hero-grid hero-grid-hero">
+      <div class="hero-stage-lights" aria-hidden="true">
+        <span class="stage-light"></span>
+        <span class="stage-light"></span>
+        <span class="stage-light"></span>
+      </div>
+
+      <div class="hero-bot-wrap reveal-hero" style="--d:0.35s">
+        <button type="button" class="guard-bot hero-bot" id="hero-bot" aria-label="Stage robot — click for fire">
+          <div class="bot-stack">
+            <div class="guard-antenna"><span class="guard-tip"></span></div>
+            <div class="guard-head">
+              <div class="guard-eye"><span class="guard-pupil"></span></div>
+              <div class="guard-eye"><span class="guard-pupil"></span></div>
+              <div class="guard-mouth"></div>
+            </div>
+            <div class="guard-neck"></div>
+            <div class="guard-upper">
+              <div class="guard-arm arm-l">
+                <span class="arm-upper"></span>
+                <span class="arm-lower"></span>
+                <span class="guard-hand"></span>
+              </div>
+              <div class="guard-body"><span class="guard-core"></span></div>
+              <div class="guard-arm arm-r">
+                <span class="arm-upper"></span>
+                <span class="arm-lower"></span>
+                <span class="guard-hand"></span>
+              </div>
+            </div>
+            <div class="guard-lower">
+              <div class="guard-leg leg-l">
+                <span class="leg-upper"></span>
+                <span class="leg-lower"></span>
+                <span class="guard-foot"></span>
+              </div>
+              <div class="guard-leg leg-r">
+                <span class="leg-upper"></span>
+                <span class="leg-lower"></span>
+                <span class="guard-foot"></span>
+              </div>
+            </div>
+            <div class="bot-stage-line" aria-hidden="true"></div>
+          </div>
+          <div class="guard-fire-host"></div>
+        </button>
+        <p class="hero-bot-hint">Click me</p>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-fullname reveal-hero" style="--d:0.2s">Mohamed Jaufer Mohamed Hisshan</p>
+        <h1 class="hero-name">
+          <span class="line reveal-hero" style="--d:0.45s">MOHAMED</span>
+          <span class="line gold reveal-hero" style="--d:0.65s">HISSHAN</span>
+        </h1>
+        <p class="hero-tagline reveal-hero" style="--d:0.85s" aria-label="Speaker, Leader, Volunteer, Student and Builder">
+          <span class="tagline-roles">
+            <span class="role-word" style="--i:0">Speaker</span><span class="role-sep" style="--i:1" aria-hidden="true">&middot;</span><span class="role-word" style="--i:2">Leader</span><span class="role-sep" style="--i:3" aria-hidden="true">&middot;</span><span class="role-word" style="--i:4">Volunteer</span><span class="role-sep" style="--i:5" aria-hidden="true">&middot;</span><span class="role-word" style="--i:6">Student &amp; Builder</span>
+          </span>
+        </p>
+
+        <div class="hero-identity">
+          <span class="id-tag">Debater</span>
+          <span class="id-tag">Toastmaster</span>
+          <span class="id-tag">Author</span>
+          <span class="id-tag">Judge</span>
+          <span class="id-tag">Adjudicator</span>
+          <span class="id-tag">Emcee</span>
+          <span class="id-tag">Invigilator</span>
+          <span class="id-tag">Content Creator</span>
+          <span class="id-tag">Rugby Referee</span>
+          <span class="id-tag">Harvard Aspire Alumni</span>
+          <span class="id-tag">UPG Biashara Alumni</span>
+          <span class="id-tag">Volunteer &middot; 20+ organisations</span>
+        </div>
+
+        <div class="hero-badges reveal-hero" style="--d:1.8s">
+          <span class="badge badge-main badge-with-logo">
+            <img class="edu-logo edu-logo--sm edu-logo--rgu" src="assets/rgu-logo.png" alt="Robert Gordon University logo" width="24" height="24" />
+            BSc (Hons) AI &amp; Data Science &middot; Robert Gordon University, UK
+          </span>
+          <span class="badge badge-alt badge-with-logo">
+            <img class="edu-logo edu-logo--sm edu-logo--ousl" src="assets/open-university-logo.png" alt="Open University of Sri Lanka logo" width="24" height="24" />
+            LLB (Hons) &middot; Open University of Sri Lanka
+          </span>
+          <span class="badge badge-ephub">
+            <img src="assets/english-pro-hub-logo.png" alt="English Pro Hub logo" width="28" height="28" />
+            Founder &middot; English Pro Hub
+          </span>
+        </div>
+
+        <a href="#about" class="hero-cta reveal-hero" style="--d:2.0s">THE SHOW BEGINS &darr;</a>
+      </div>
+    </div>
   </header>
 
   <!-- Ticker tape -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>TOASTMASTER 4.5+ YRS &#9679; 15+ CHIEF JUDGE &#9679; 20+ EVENTS HOSTED &#9679; ENGLISH PRO HUB &#9679; RECALL &middot; SPEECHLENS &#9679; HARVARD ASPIRE &middot; DISTINCTION &#9679; CANADA CUP GRAND FINALIST &#9679; BATCH REP &middot; AI &amp; DS &#9679; TRILINGUAL: EN &middot; TA &middot; SI &#9679;&nbsp;</span>
-      <span>TOASTMASTER 4.5+ YRS &#9679; 15+ CHIEF JUDGE &#9679; 20+ EVENTS HOSTED &#9679; ENGLISH PRO HUB &#9679; RECALL &middot; SPEECHLENS &#9679; HARVARD ASPIRE &middot; DISTINCTION &#9679; CANADA CUP GRAND FINALIST &#9679; BATCH REP &middot; AI &amp; DS &#9679; TRILINGUAL: EN &middot; TA &middot; SI &#9679;&nbsp;</span>
+      <span>TOASTMASTER 4.5+ YRS &#9679; 15+ CHIEF JUDGE &#9679; 20+ EVENTS HOSTED &#9679; ENGLISH PRO HUB &#9679; HISSHAN SPEAKS &#9679; VOLUNTEER 20+ ORGS &#9679; HARVARD ASPIRE &middot; DISTINCTION &#9679; CANADA CUP GRAND FINALIST &#9679; BSc AI &amp; DS &#9679; LLB OUSL &#9679; TRILINGUAL: EN &middot; TA &middot; SI &#9679;&nbsp;</span>
+      <span>TOASTMASTER 4.5+ YRS &#9679; 15+ CHIEF JUDGE &#9679; 20+ EVENTS HOSTED &#9679; ENGLISH PRO HUB &#9679; HISSHAN SPEAKS &#9679; VOLUNTEER 20+ ORGS &#9679; HARVARD ASPIRE &middot; DISTINCTION &#9679; CANADA CUP GRAND FINALIST &#9679; BSc AI &amp; DS &#9679; LLB OUSL &#9679; TRILINGUAL: EN &middot; TA &middot; SI &#9679;&nbsp;</span>
     </div>
   </div>
 
   <!-- ========== ACT I: THE OPENING ========== -->
   <section id="about" class="act">
     <p class="act-label">ACT I &middot; THE OPENING</p>
-    <h2>Most engineers learn to present.<br /><span class="gold">I'm a presenter learning to engineer.</span></h2>
+    <h2>I show up on stage, in classrooms,<br /><span class="gold">and in communities &mdash; not just behind a screen.</span></h2>
     <div class="about-grid">
       <figure class="portrait">
         <div class="portrait-frame">
           <img src="assets/hisshan-stagecraft.png" alt="Mohamed Hisshan hosting StageCraft 2026 at IIT" />
         </div>
-        <figcaption>Hosting StageCraft '26 at IIT &mdash; 1,500+ in the crowd.</figcaption>
+        <figcaption>Hosting StageCraft '26 at IIT &mdash; 1,500+ in the audience.</figcaption>
       </figure>
       <div class="about-text">
-        <p>I've spent <strong>4.5+ years on stage</strong> as a Toastmaster: speaking, judging contests, and hosting events with crowds of over a thousand. Then I asked a question most speakers never ask: <em>could I build the tools I wish existed?</em></p>
-        <p>So now I'm an <strong>AI &amp; Data Science undergraduate at Robert Gordon University (IIT, Colombo)</strong> and <strong>Batch Representative</strong> for my programme, turning years of communication into code. Projects like SpeechLens and ReCall (Cursor Buildathon) merge speaking, empathy, and engineering &mdash; and you can try SpeechLens live on this page.</p>
-        <p>I founded <strong>English Pro Hub</strong> (affordable or free English coaching), serve as a <strong>British Council examinations invigilator</strong>, and completed the <strong>Harvard Aspire Leaders Program (Distinction)</strong> and <strong>UPG Biashara (Distinction, Tribe Sherpa)</strong>. Trilingual: Tamil, English, Sinhala.</p>
+        <p>For <strong>4.5+ years</strong> I've been a Toastmaster: speaking, judging contests, and emceeing events for crowds of over a thousand. That work taught me how to hold a room, read a crowd, and deliver under pressure &mdash; skills I bring to every role, not just the stage.</p>
+        <p>I'm studying a <strong>BSc (Hons) in Artificial Intelligence &amp; Data Science at Robert Gordon University, UK</strong> and an <strong>LLB (Hons) at the Open University of Sri Lanka</strong>, alongside a diploma in English. I'm <strong>Batch Representative</strong> for my programme, a <strong>British Council examinations invigilator</strong>, and founder of <strong>English Pro Hub</strong> &mdash; affordable or free English coaching for students who need it.</p>
+        <p>Off stage, I create content on <strong>Hisshan Speaks</strong>, volunteer with <strong>20+ organisations</strong> (from the ICC T20 World Cup to the Lanka Alzheimer's Foundation), and build projects like SpeechLens and ReCall when I spot a problem worth solving. I completed the <strong>Harvard Aspire Leaders Program (Distinction)</strong> and <strong>UPG Biashara (Distinction, Tribe Sherpa)</strong>. Trilingual: English, Tamil, and Sinhala.</p>
       </div>
       <div class="stat-grid">
         <div class="stat"><span class="stat-num" data-count="4.5" data-decimals="1">0</span><span class="stat-suffix">+ yrs</span><p>ON STAGE AS A TOASTMASTER</p></div>
@@ -200,11 +273,40 @@
     <p class="act-label">EDUCATION</p>
     <h2>Where I <span class="gold">learn and lead.</span></h2>
     <div class="timeline">
-      <article class="timeline-item"><span class="timeline-date">2026 &ndash; Present</span><h4>BSc (Hons) Artificial Intelligence &amp; Data Science</h4><p>Robert Gordon University, UK (delivered via IIT, Colombo). Batch Representative for the AI &amp; Data Science programme.</p></article>
-      <article class="timeline-item"><span class="timeline-date">2026 &ndash; Present</span><h4>Diploma in English Language &amp; Literature</h4><p>Aquinas College of Higher Studies.</p></article>
-      <article class="timeline-item"><span class="timeline-date">2010 &ndash; 2023</span><h4>Royal College, Colombo 7</h4><p>GCE Advanced Level (2023). GCE Ordinary Level (2020): 8 As and 1 B. Primary Prefect, Grade Coordinator of eight clubs, Scout Troop Leader, Cadet Band leader.</p></article>
+      <article class="timeline-item timeline-item--logo">
+        <img class="edu-logo edu-logo--rgu" src="assets/rgu-logo.png" alt="Robert Gordon University logo" width="52" height="52" />
+        <div class="timeline-body">
+          <span class="timeline-date">2026 &ndash; Present</span>
+          <h4>BSc (Hons) Artificial Intelligence &amp; Data Science</h4>
+          <p>Robert Gordon University, UK. Batch Representative for the AI &amp; Data Science programme.</p>
+        </div>
+      </article>
+      <article class="timeline-item timeline-item--logo">
+        <img class="edu-logo edu-logo--ousl" src="assets/open-university-logo.png" alt="Open University of Sri Lanka logo" width="52" height="52" />
+        <div class="timeline-body">
+          <span class="timeline-date">2026 &ndash; Present</span>
+          <h4>LLB (Hons) Bachelor of Laws</h4>
+          <p>The Open University of Sri Lanka. Studied alongside my other degrees &mdash; sharpens how I read rules, argue clearly, and think about fairness.</p>
+        </div>
+      </article>
+      <article class="timeline-item timeline-item--logo">
+        <img class="edu-logo edu-logo--aquinas" src="assets/aquinas-logo.png" alt="Aquinas College of Higher Studies logo" width="52" height="52" />
+        <div class="timeline-body">
+          <span class="timeline-date">2026 &ndash; Present</span>
+          <h4>Diploma in English Language &amp; Literature</h4>
+          <p>Aquinas College of Higher Studies.</p>
+        </div>
+      </article>
+      <article class="timeline-item timeline-item--logo">
+        <img class="edu-logo edu-logo--royal" src="assets/royal-college-logo.png" alt="Royal College Colombo crest" width="52" height="52" />
+        <div class="timeline-body">
+          <span class="timeline-date">2010 &ndash; 2023</span>
+          <h4>Royal College, Colombo 7</h4>
+          <p>GCE Advanced Level (2023). GCE Ordinary Level (2020): 8 As and 1 B. Primary Prefect, Grade Coordinator of eight clubs, Scout Troop Leader, Cadet Band leader.</p>
+        </div>
+      </article>
     </div>
-    <p class="section-note">Also pursuing LLB (Hons) at The Open University of Sri Lanka &mdash; not my career focus, but it sharpens how I read rules and argue precisely.</p>
+    <p class="section-note">Studied at Informatics Institute of Technology (IIT), Colombo as the local delivery partner for Robert Gordon University.</p>
   </section>
 
   <!-- ========== EXPERIENCE ========== -->
@@ -263,11 +365,11 @@
     <h2>Every good speech ends with questions. <span class="gold">Ask yours.</span></h2>
     <div class="qa-box">
       <div class="qa-questions">
-        <button class="qa-q" data-a="Because data tells stories, and storytelling is what I've done my whole life. After analyzing asteroid data for NASA as a citizen scientist in 2021, I realized the people who change things aren't just the ones who find insights. They're the ones who can explain them. AI &amp; Data Science at RGU lets me do both.">Why AI &amp; Data Science?</button>
-        <button class="qa-q" data-a="It's a tutoring initiative I founded to make English coaching affordable, or completely free, for students who need it most. I coach speech, oratory and dictation for English Day competitions. It's also my testing ground: tools I build, like SpeechLens, get used by real students.">What is English Pro Hub?</button>
-        <button class="qa-q" data-a="SpeechLens was project one. Next up: a data analysis of real Sri Lankan public data with pandas, a rupee expense tracker, a vocab quiz generator for my students, and eventually a full Streamlit app to run English Pro Hub. Each project is roughly 20% above my current skill. That's the rule.">What are you building next?</button>
-        <button class="qa-q" data-a="Yes, an LLB at the Open University of Sri Lanka, alongside my AI &amp; Data Science degree. I'm not pursuing law as a career; it trains me to argue precisely, read carefully, and understand the rules systems run on. Useful traits in an engineer.">Wait, a law degree too?</button>
-        <button class="qa-q" data-a="Internships and entry opportunities in AI, data science, or software. Anywhere I can build real things with real data. I bring something most junior candidates can't: I can present the work to a boardroom the same day I finish it.">What are you looking for?</button>
+        <button class="qa-q" data-a="Because data tells stories, and storytelling is what I've done my whole life. After analyzing asteroid data for NASA as a citizen scientist in 2021, I realised the people who change things aren't just the ones who find insights &mdash; they're the ones who can explain them. AI &amp; Data Science at RGU lets me do both, but the speaking side never switches off.">Why AI &amp; Data Science?</button>
+        <button class="qa-q" data-a="It's a tutoring initiative I founded to make English coaching affordable, or completely free, for students who need it most. I coach speech, oratory, and dictation for English Day competitions. It's also my testing ground: tools I build, like SpeechLens, get used by real students.">What is English Pro Hub?</button>
+        <button class="qa-q" data-a="SpeechLens was project one. Next up: a data analysis of real Sri Lankan public data with pandas, a rupee expense tracker, a vocab quiz generator for my students, and eventually a full Streamlit app to run English Pro Hub. Each project is roughly 20% above my current skill &mdash; that's the rule.">What are you building next?</button>
+        <button class="qa-q" data-a="Yes &mdash; an LLB (Hons) at the Open University of Sri Lanka, alongside my AI &amp; Data Science degree and my diploma in English. Law trains me to argue precisely, read carefully, and think about how rules affect real people. That mindset helps whether I'm on stage, in a classroom, or building a product.">Wait, a law degree too?</button>
+        <button class="qa-q" data-a="Opportunities where I can lead, communicate, and grow &mdash; internships, graduate roles, part-time work, or projects with real impact. That might mean tech, education, media, community work, or something in between. I bring something most candidates my age can't: I can hold a room, explain complex ideas clearly, and show up reliably for a team.">What are you looking for?</button>
       </div>
       <div class="qa-answer"><p id="qa-text">Click a question &mdash; I'll answer the way I would on stage.</p></div>
     </div>
@@ -277,7 +379,7 @@
   <section id="contact" class="act finale">
     <p class="act-label">THE CALL TO ACTION</p>
     <h2 id="finale-line">Time's up &mdash; <span class="gold">but my story isn't.</span></h2>
-    <p class="finale-sub">If you're a recruiter, a fellow builder, or a Toastmaster who spotted the timing lights &mdash; let's talk.</p>
+    <p class="finale-sub">Recruiter, collaborator, mentor, or fellow Toastmaster who spotted the timing lights &mdash; I'd love to hear from you.</p>
     <a class="big-cta" href="mailto:hisshanm@yahoo.com">hisshanm@yahoo.com</a>
     <div class="social-row">
       <a href="https://github.com/hisshanzzz" target="_blank" rel="noopener">GITHUB</a>
@@ -285,7 +387,7 @@
       <a href="https://www.youtube.com/@hisshanspeaks6063" target="_blank" rel="noopener">YOUTUBE</a>
     </div>
     <footer>
-      <p>MOHAMED JAUFER MOHAMED HISSHAN &middot; AI &amp; DATA SCIENCE &middot; RGU/IIT &middot; COLOMBO</p>
+      <p>MOHAMED JAUFER MOHAMED HISSHAN &middot; COLOMBO</p>
     </footer>
   </section>
 

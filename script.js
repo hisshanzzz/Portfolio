@@ -4,7 +4,8 @@
    2. Stats count up when scrolled into view
    3. Toastmasters timing lights react to scroll progress
    4. Q&A answers type out letter by letter
-   5. SpeechLens live demo (JS port of my Python project)
+   5. SpeechLens live demo
+   6. Gold dust particles
    ============================================================ */
 
 /* ---------- 1. Spotlight ---------- */
@@ -12,8 +13,61 @@ const spotlight = document.getElementById("spotlight");
 document.addEventListener("mousemove", (e) => {
   spotlight.style.setProperty("--mx", e.clientX + "px");
   spotlight.style.setProperty("--my", e.clientY + "px");
+
+  /* Hero robot eyes follow cursor */
+  const heroBot = document.getElementById("hero-bot");
+  if (heroBot) {
+    const rect = heroBot.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height * 0.22;
+    const angle = Math.atan2(e.clientY - cy, e.clientX - cx);
+    const dx = Math.cos(angle) * 5;
+    const dy = Math.sin(angle) * 5;
+    heroBot.querySelectorAll(".guard-pupil").forEach((p) => {
+      p.style.transform = `translate(${dx}px, ${dy}px)`;
+    });
+  }
 });
-// On touch devices there is no mouse, so drift the light gently instead
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Hero robot — click to spew gold fire sideways from the mouth */
+function spewFire(bot) {
+  if (reducedMotion) return;
+  const host = bot.querySelector(".guard-fire-host");
+  if (!host) return;
+  bot.classList.add("firing");
+  const count = 24;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement("span");
+    p.className = "fire-particle";
+    const goLeft = i % 2 === 0;
+    const spread = (Math.random() - 0.5) * 0.55;
+    const angle = goLeft
+      ? Math.PI + spread
+      : spread;
+    const dist = 70 + Math.random() * 90;
+    const tx = Math.cos(angle) * dist;
+    const ty = Math.sin(angle) * dist * 0.35 + (Math.random() - 0.5) * 18;
+    const size = 10 + Math.random() * 8;
+    p.style.setProperty("--tx", tx + "px");
+    p.style.setProperty("--ty", ty + "px");
+    p.style.setProperty("--rot", (angle * (180 / Math.PI)) + "deg");
+    p.style.setProperty("--fs", size + "px");
+    host.appendChild(p);
+    p.addEventListener("animationend", () => p.remove());
+  }
+  setTimeout(() => bot.classList.remove("firing"), 850);
+}
+
+const heroBot = document.getElementById("hero-bot");
+if (heroBot) {
+  heroBot.addEventListener("click", (e) => {
+    e.stopPropagation();
+    spewFire(heroBot);
+  });
+}
+
 if (window.matchMedia("(pointer: coarse)").matches) {
   let t = 0;
   setInterval(() => {
@@ -50,7 +104,7 @@ function animateCount(el) {
   const start = performance.now();
   function tick(now) {
     const p = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
+    const eased = 1 - Math.pow(1 - p, 3);
     el.textContent = (target * eased).toFixed(decimals);
     if (p < 1) requestAnimationFrame(tick);
   }
@@ -114,56 +168,7 @@ document.querySelectorAll(".qa-q").forEach((btn) => {
   });
 });
 
-/* ---------- 4b. BEAMER the stagehand robot ---------- */
-const beamer = document.getElementById("beamer");
-const bubble = document.getElementById("beamer-bubble");
-const pupils = document.querySelectorAll(".beamer-pupil");
-
-// eyes follow the cursor
-document.addEventListener("mousemove", (e) => {
-  const rect = beamer.getBoundingClientRect();
-  const cx = rect.left + rect.width / 2;
-  const cy = rect.top + rect.height / 2;
-  const angle = Math.atan2(e.clientY - cy, e.clientX - cx);
-  const dx = Math.cos(angle) * 3;
-  const dy = Math.sin(angle) * 3;
-  pupils.forEach((p) => (p.style.transform = `translate(${dx}px, ${dy}px)`));
-});
-
-const BEAMER_LINES = [
-  "Psst. I'm Beamer, the stagehand.",
-  "Try the SpeechLens demo. Paste anything.",
-  "Watch the lights bottom-right. They change as you scroll.",
-  "The boss judged 25+ speech contests. I just hold the spotlight.",
-  "Scroll to the Q&A and ask him something.",
-  "He hosted 1,500+ people at StageCraft. I get stage fright.",
-  "Recruiter? The 'Let's Talk' button is shiny for a reason.",
-];
-let lineIndex = 0;
-let beamerTimer = null;
-
-function beamerSay(text, duration = 4200) {
-  bubble.textContent = text;
-  beamer.classList.add("talking");
-  clearTimeout(beamerTimer);
-  beamerTimer = setTimeout(() => beamer.classList.remove("talking"), duration);
-}
-
-beamer.addEventListener("click", () => {
-  lineIndex = (lineIndex + 1) % BEAMER_LINES.length;
-  beamerSay(BEAMER_LINES[lineIndex]);
-});
-
-// say hello shortly after arriving, then drop occasional tips
-setTimeout(() => beamerSay(BEAMER_LINES[0]), 2500);
-setInterval(() => {
-  if (!beamer.classList.contains("talking")) {
-    lineIndex = (lineIndex + 1) % BEAMER_LINES.length;
-    beamerSay(BEAMER_LINES[lineIndex]);
-  }
-}, 16000);
-
-/* ---------- 4c. Gold dust drifting in the light ---------- */
+/* ---------- 5. Gold dust ---------- */
 const dustCanvas = document.getElementById("dust");
 const ctx = dustCanvas.getContext("2d");
 let motes = [];
@@ -203,22 +208,16 @@ function drawDust(t) {
   });
   requestAnimationFrame(drawDust);
 }
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+if (!reducedMotion) {
   requestAnimationFrame(drawDust);
 }
 
-/* ---------- 5. SpeechLens live demo ----------
-   A small JavaScript version of my Python project SpeechLens:
-   - delivery time at an average speaking pace of 130 words/min
-   - Toastmasters 5-7 minute window check
-   - filler word detection
-   - Flesch Reading Ease score
------------------------------------------------- */
+/* ---------- 6. SpeechLens live demo ---------- */
 const FILLERS = [
   "um", "uh", "like", "you know", "basically", "actually", "literally",
   "sort of", "kind of", "i mean", "so", "well", "right", "okay", "just"
 ];
-const WPM = 130; // average speaking pace
+const WPM = 130;
 
 function countSyllables(word) {
   word = word.toLowerCase().replace(/[^a-z]/g, "");
@@ -234,12 +233,10 @@ function analyzeSpeech(text) {
   const sentences = text.split(/[.!?]+/).filter((s) => s.trim().length > 0);
   const sentenceCount = Math.max(sentences.length, 1);
 
-  // delivery time
   const minutes = wordCount / WPM;
   const mm = Math.floor(minutes);
   const ss = Math.round((minutes - mm) * 60);
 
-  // filler words
   const lower = " " + text.toLowerCase().replace(/[^a-z\s']/g, " ") + " ";
   let fillerCount = 0;
   const found = [];
@@ -252,7 +249,6 @@ function analyzeSpeech(text) {
     }
   });
 
-  // Flesch Reading Ease
   let syllables = 0;
   words.forEach((w) => (syllables += countSyllables(w)));
   const flesch =
@@ -280,7 +276,7 @@ document.getElementById("demo-analyze").addEventListener("click", () => {
   if (text.split(/\s+/).filter(Boolean).length < 10) {
     demoResults.hidden = false;
     document.getElementById("r-verdict").textContent =
-      "Give me at least 10 words to work with - even a Table Topics answer is longer than that!";
+      "Give me at least 10 words to work with — even a Table Topics answer is longer than that!";
     return;
   }
 
@@ -301,17 +297,16 @@ document.getElementById("demo-analyze").addEventListener("click", () => {
   else if (r.flesch >= 50) readEl.textContent = "MODERATE";
   else readEl.textContent = "DENSE";
 
-  // verdict, written the way a contest judge would say it
   let verdict;
   if (r.minutes >= 5 && r.minutes <= 7 && r.fillerCount <= 3) {
     verdict =
-      "Contest-ready. You're inside the window with clean delivery - I'd score this well.";
+      "Contest-ready. You're inside the window with clean delivery — I'd score this well.";
   } else if (r.minutes < 5) {
     verdict =
       "Too short for a 5-7 minute contest. In Toastmasters you'd be disqualified before the judges even vote. Add a story.";
   } else if (r.minutes > 7) {
     verdict =
-      "Over time - the red light would be on and the timer standing. Cut your weakest paragraph; the speech will get stronger.";
+      "Over time — the red light would be on and the timer standing. Cut your weakest paragraph; the speech will get stronger.";
   } else {
     verdict =
       "Timing works, but " + r.fillerCount + " filler words is where good speeches lose. " +
