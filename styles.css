@@ -1246,6 +1246,9 @@ body {
   padding: 36px;
   margin-bottom: 28px;
 }
+.project.featured.project-featured-secondary {
+  grid-template-columns: 1fr;
+}
 .project-tag {
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
